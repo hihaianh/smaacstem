@@ -1,0 +1,2 @@
+# smaacstem
+ codefirstgirls group project
