@@ -293,7 +293,10 @@ textarea {
 }
 
 .filter-dropdown input[type="checkbox"] {
-  align-items: left;
+  display: flex;
+  position: absolute;
+  width: 20px;
+  height: 20px;
 }
 
 .filter-dropdown.active {
@@ -331,7 +334,7 @@ label:hover {
 .row-title {
   font-family: 'Jua', sans-serif;
   margin-left: 50px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -340,12 +343,6 @@ label:hover {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-
-/* .quizzes-cards-row, .games-cards-row, .videos-cards-row, .competitions-cards-row, .projects-cards-row {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px 50px;
-} */
 
 .quizzes-card, .games-card, .videos-card, .competitions-card, .projects-card {
   border: 1px solid black;
@@ -371,8 +368,32 @@ a.btn.btn-primary {
   color: #b1c5da;
 }
 
-.likes-container {
+.last-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fav-container {
+  position: relative;
   text-align: right;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-junior {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card-caption {
+    font-size: 20px;
+  }
 }
 
 /* .fa-heart:hover {

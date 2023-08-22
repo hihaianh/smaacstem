@@ -44,19 +44,45 @@ customFilters.addEventListener('click', function () {
     filterDropdown.classList.toggle('active')
 })
 
+//chosen filters displayed in junior-filter bar
+//need filterDropdown
+
+// const showChosenFilters = document.querySelector('.chosen-filters')
+// const chosenCheckboxes = document.querySelector('.filter-dropdown input[type="checkbox"]');
+
+// filterCheckboxes.forEach(checkbox => {
+//     checkbox.addEventListener('change', () => {
+//         updateFilters
+//     })
+// })
+
+// function updateFilters() {
+//     const chosenFilters = Array.from(filterCheckboxes)
+//     chosenFilters.filter(checkbox => checkbox.checked);
+//     .map(checkbox => checkbox.nextElementSibling.textContent)
+
+//     showChosenFilters.innerHTML = 
+// }
+
+
 //favourite count
-const favouriteIcon = document.getElementById('heart');
-const counter = document.getElementById('favourite-count');
+// const favouriteIcon = document.getElementById('heart');
+const favouriteIcon = document.querySelectorAll('.fa-heart');
+const counter = document.querySelectorAll('.favourite-count');
 
 let total = 0;
 
-favouriteIcon.addEventListener("click", () => {
-    total++
-    counter.textContent = total;
-    heart.style.color = "red";
+favouriteIcon.forEach((favouriteIcon) => {
+    favouriteIcon.addEventListener("click", () => {
+        if (favouriteIcon.style.color === "0e65fb") {
+            total++
+            favouriteIcon.style.color = "red";
+        } else {
+            total--
+            favouriteIcon.style.color = "#0e65fb";
+        }
+})
 })
 
-//unlike it 
-// favouriteIcon.addEventListener("")
-// heart.style.color = "blue"
-
+localStorage.setItem(total)
+//unlike it
