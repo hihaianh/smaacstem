@@ -125,14 +125,13 @@ footer a {
   width: calc(33.33% - 20px);
   margin: 10px;
   position: relative;
-  /* overflow: hidden; */
 }
 
 .card img {
   width: 100%;
   height: auto;
-  /* display: block; */
 }
+
 .card-headline {
   position: absolute;
   height: auto;
@@ -146,8 +145,7 @@ footer a {
 .headline-backdrop {
   background-color: #081480;
   transform: translateX(-20px);
-  padding: 8px 40px 5px 20px;
-  /* border-radius: 0px 20px 20px 0px; */
+  padding: 8px 40px 5px 25px;
   clip-path: polygon(0% 0%, 100% 0%, calc(100% - 20px) 50%, 100% 100%, 0% 100%)
 }
 
@@ -157,29 +155,47 @@ h2 {
 
 .card-caption {
   position: absolute;
-  top: 75%;
+  top: 65%;
   left: 20px;
   right: 5px;
-  transform: translateY(-50%);
   color: white;
   text-align: left;
   font-family: 'Jua', sans-serif;
   text-shadow: 1px 1px black;
   font-size: 20px;
+  z-index: 2;
 }
 
-/* .card:before {
-  background: linear-gradient(black 100%, black 75%, black 50%, black 25%);
-} */
+.gradient-overlay {
+  position: relative;
+  display: block;
+}
+
+.gradient-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(9, 28, 194, 0.531),  rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+ 
+.gradient-overlay:hover::before {
+  opacity: 1;
+}
 
 .card:hover:not(#juniorExplorers){
   transform: translateY(-10px);
+  border: 2px solid navy;
   transition: ease-out 0.3s;
-  background: linear-gradient(0deg, #081480, #081480, #081480);
 }
 
 /* notes container (that is hidden until you click pen and book icon) */
-.hidden {
+/* .hidden {
   display: none;
 }
 
@@ -242,7 +258,7 @@ textarea {
 
 .peekaboo {
   display: none;
-}
+} */
 
 /* filter by bar - can select more than one option */
 .junior-filter {
@@ -317,13 +333,13 @@ label:hover {
   margin: 15px 20px;
   text-align: left;
 }
-
+/* 
 #type {
   padding: 10px;
   margin: 10px 0px;
   width: 200px;
   font-size: 18px;
-}
+} */
 
 .filter-by {
   display: inline-flex;
@@ -396,6 +412,10 @@ a.btn.btn-primary {
   }
 }
 
+
+.red {
+  color: red !important;
+}
 /* .fa-heart:hover {
   color:palegreen
 } */

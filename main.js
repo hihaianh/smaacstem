@@ -67,22 +67,43 @@ customFilters.addEventListener('click', function () {
 
 //favourite count
 // const favouriteIcon = document.getElementById('heart');
-const favouriteIcon = document.querySelectorAll('.fa-heart');
-const counter = document.querySelectorAll('.favourite-count');
+// const favouriteIcon = document.querySelectorAll('.fa-heart');
+// const counter = document.querySelectorAll('.favourite-count');
 
-let total = 0;
+// let total = 0;
 
-favouriteIcon.forEach((favouriteIcon) => {
-    favouriteIcon.addEventListener("click", () => {
-        if (favouriteIcon.style.color === "0e65fb") {
-            total++
-            favouriteIcon.style.color = "red";
-        } else {
-            total--
-            favouriteIcon.style.color = "#0e65fb";
-        }
-})
-})
+// favouriteIcon.forEach((favouriteIcon) => {
+//     favouriteIcon.addEventListener("click", () => {
+//         if (favouriteIcon.style.color === "0e65fb") {
+//             total++
+//             favouriteIcon.style.color = "red";
+//         } else {
+//             total--
+//             favouriteIcon.style.color = "#0e65fb";
+//         }
+// })
+// })
 
-localStorage.setItem(total)
+// localStorage.setItem(total)
 //unlike it
+
+// document.addEventListener('DOMContentLoaded', function() {
+    const heartIcons = document.querySelectorAll('.heart-icon');
+    const counters = document.querySelectorAll('.favourite-count');
+
+    heartIcons.forEach(heart => {
+        heart.addEventListener('click', function () {
+            heart.classList.toggle('red');
+        });
+    });
+
+    counters.forEach(counter => {
+        counter.addEventListener('change', () => {
+            if (heart.style.color === "red") {
+                counter--
+            } else {
+                counter++
+            }
+        })
+    })
+// } )
